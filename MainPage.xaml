@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppHotel.MainPage"
+    Title="App Hotel"
+    BackgroundColor="#E3F2FD">
+
+    <ScrollView>
+
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+
+            <Image
+                Source="hotel.png"
+                HeightRequest="220"
+                Aspect="AspectFill" />
+
+            <Label
+                Text="🏨 APP HOTEL PREMIUM"
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="#0D47A1"
+                HorizontalOptions="Center" />
+
+            <Frame
+                BorderColor="#BBDEFB"
+                CornerRadius="15"
+                Padding="15">
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label
+                        Text="Check-in"
+                        FontAttributes="Bold" />
+
+                    <DatePicker
+                        x:Name="dtEntrada" />
+
+                    <Label
+                        Text="Check-out"
+                        FontAttributes="Bold" />
+
+                    <DatePicker
+                        x:Name="dtSaida" />
+
+                    <Label
+                        Text="Tipo de Quarto"
+                        FontAttributes="Bold" />
+
+                    <Picker
+                        x:Name="pkQuarto"
+                        Title="Selecione um quarto">
+
+                        <Picker.Items>
+                            <x:String>Standard</x:String>
+                            <x:String>Luxo</x:String>
+                            <x:String>Suíte Master</x:String>
+                        </Picker.Items>
+
+                    </Picker>
+
+                    <Label
+                        Text="Quantidade de Hóspedes"
+                        FontAttributes="Bold" />
+
+                    <Stepper
+                        x:Name="stepHospedes"
+                        Minimum="1"
+                        Maximum="10"
+                        Increment="1"
+                        Value="1"
+                        ValueChanged="Stepper_ValueChanged" />
+
+                    <Label
+                        x:Name="lblHospedes"
+                        Text="1 hóspede"
+                        FontSize="18"
+                        TextColor="DarkBlue" />
+
+                </VerticalStackLayout>
+
+            </Frame>
+
+            <Button
+                Text="✅ Reservar"
+                BackgroundColor="#2E7D32"
+                TextColor="White"
+                CornerRadius="15"
+                Clicked="Reservar_Clicked" />
+
+            <Button
+                Text="ℹ️ Sobre"
+                BackgroundColor="#6A1B9A"
+                TextColor="White"
+                CornerRadius="15"
+                Clicked="Sobre_Clicked" />
+
+        </VerticalStackLayout>
+
+    </ScrollView>
+
+</ContentPage>
